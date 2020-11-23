@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-var name string
+var name3 string
 
 func init() {
 	// 方式2。
@@ -17,7 +17,7 @@ func init() {
 	}
 	// 方式3。
 	//cmdLine.StringVar(&name, "name", "everyone", "The greeting object.")
-	flag.StringVar(&name, "name", "everyone", "The greeting object.")
+	flag.StringVar(&name3, "name", "everyone", "The greeting object.")
 }
 
 func main() {
@@ -29,5 +29,5 @@ func main() {
 	// 方式3。
 	//cmdLine.Parse(os.Args[1:])
 	flag.Parse()
-	fmt.Printf("Hello, %s!\n", name)
+	fmt.Printf("Hello, %s!\n", name3)
 }
