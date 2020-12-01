@@ -31,5 +31,5 @@ func (receiver *hiApi) Say(name string) string {
 }
 
 func (receiver *helloApi) Say(name string) string {
-	return fmt.Sprintf("hello %v", name)
+	return fmt.Sprintf("hello.xlsx %v", name)
 }

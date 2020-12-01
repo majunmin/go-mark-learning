@@ -21,6 +21,6 @@ func TestHelloApi_Say(t *testing.T) {
 		So("hi majm", ShouldEqual, api.Say("majm"))
 
 		api2 := NewApi(2)
-		So("hello majm", ShouldEqual, api2.Say("majm"))
+		So("hello.xlsx majm", ShouldEqual, api2.Say("majm"))
 	})
 }

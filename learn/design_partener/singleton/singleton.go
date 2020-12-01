@@ -15,6 +15,7 @@ type singleton struct {
 var instance *singleton
 
 // 获取 单例对象
+// 线程安全的单例模式
 func GetSingleton() *singleton {
 	once.Do(func() {
 		instance = &singleton{}

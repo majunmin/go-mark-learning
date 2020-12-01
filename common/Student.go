@@ -14,3 +14,7 @@ type Student struct {
 	School   School    `json:"school"`
 	Birthday time.Time `json:"birthday"`
 }
+
+func (stu *Student) GetName() string {
+	return stu.Name
+}
