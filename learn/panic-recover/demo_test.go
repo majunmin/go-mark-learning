@@ -24,9 +24,13 @@ func TestFullName(t *testing.T) {
 }
 
 func TestFullName_Reciver(t *testing.T) {
-	defer RecoverName()
+	defer Recover()
 	defer fmt.Println("deferred call in main")
 	firstName := "Elon"
 	FullName(&firstName, nil)
 	fmt.Println("returned normally from main")
+}
+
+func TestFuncA(t *testing.T) {
+	FuncA()
 }

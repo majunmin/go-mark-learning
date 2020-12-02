@@ -8,6 +8,7 @@ package panic_recover
 import (
 	"fmt"
 	"runtime/debug"
+	"time"
 )
 
 func Foo() {
@@ -33,11 +34,24 @@ func FullName(firstName, lastName *string) {
 }
 
 // recover 必须在 defer 的 下一层才会生效
-func RecoverName() {
+func Recover() {
 	//func(){
 	if r := recover(); r != nil {
 		fmt.Println("Recovered", r)
 		debug.PrintStack()
 	}
 	//}()
+}
+
+func FuncA() {
+	defer Recover()
+	fmt.Println("Inside A")
+	// recover 不能恢复不同协程里面的 panic
+	go FuncB()
+	time.Sleep(1 * time.Second)
+}
+
+func FuncB() {
+	fmt.Println("Inside B")
+	panic("oh! B panicked")
 }
