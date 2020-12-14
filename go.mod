@@ -4,6 +4,7 @@ go 1.14
 
 require (
 	github.com/1920853199/go-gii v0.0.0-20191004082204-13c20bc43ed3
+	github.com/360EntSecGroup-Skylar/excelize/v2 v2.3.1 // indirect
 	github.com/DATA-DOG/go-sqlmock v1.5.0
 	github.com/astaxie/beego v1.12.3
 	github.com/go-sql-driver/mysql v1.5.0

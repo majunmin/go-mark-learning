@@ -6,6 +6,7 @@
 
 反射种类
 ```go
+// reflect.go
 type Kind uint
 
 const (
@@ -37,6 +38,27 @@ const (
 	Struct
 	UnsafePointer
 )
+```
+
+```go
+// reflect.go
+	// IsVariadic reports whether a function type's final input parameter
+	// is a "..." parameter. If so, t.In(t.NumIn() - 1) returns the parameter's
+	// implicit actual type []T.
+	//
+	// For concreteness, if t represents func(x int, y ... float64), then
+	//
+	//	t.NumIn() == 2
+	//	t.In(0) is the reflect.Type for "int"
+	//	t.In(1) is the reflect.Type for "[]float64"
+	//	t.IsVariadic() == true
+	//
+	// IsVariadic panics if the type's Kind is not Func.
+	IsVariadic() bool
+
+	// Elem returns a type's element type.
+	// It panics if the type's Kind is not Array, Chan, Map, Ptr, or Slice.
+	Elem() Type
 ```
 
 > 在使用反射时，需要首先理解类型（Type）和种类（Kind）的区别。
