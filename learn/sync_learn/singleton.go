@@ -3,10 +3,9 @@
   @date: 2020/11/22
   @note:
 **/
-package main
+package sync_learn
 
 import (
-	"fmt"
 	"sync"
 	"sync/atomic"
 )
@@ -18,16 +17,6 @@ var (
 )
 
 type Singleton struct{}
-
-// 将标准代码提取出来 就成了 标准库里的 sync.Once
-func main() {
-	// custom:
-	instance1 := Instance()
-	fmt.Println(&instance1)
-
-	println(GetInstance())
-
-}
 
 var instance2 *Singleton
 var once sync.Once
