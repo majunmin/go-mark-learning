@@ -1,4 +1,4 @@
-package main
+package interface_learn
 
 import "fmt"
 
@@ -26,10 +26,4 @@ func findType(i interface{}) {
 	default:
 		fmt.Printf("Unknown Type \n")
 	}
-}
-func main() {
-	findType("Naveen")
-	findType(11)
-	findType(89.98)
-	findType(Person{name: "majm", age: 18})
 }

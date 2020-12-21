@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package interface_learn
 
 type VowelsFinder interface {
 	FindVowels() []rune
@@ -25,11 +23,4 @@ func isVowel(word rune) bool {
 		return true
 	}
 	return false
-}
-
-func main() {
-	Name := MyString("qwerpvnavopqtqpeovba")
-	var v VowelsFinder
-	v = Name // valid only if MyString implements VowelsFinder
-	fmt.Printf("Vowels are %c ", v.FindVowels())
 }

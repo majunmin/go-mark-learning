@@ -3,13 +3,11 @@
   @date: 2020/11/21
   @note:
 **/
-package main
+package interface_learn
 
 import (
 	"bytes"
-	"fmt"
 	"io"
-	"os"
 	"strings"
 )
 
@@ -20,15 +18,6 @@ type UpperWriter struct {
 
 func (p UpperWriter) Write(data []byte) (n int, err error) {
 	return p.Writer.Write(bytes.ToUpper(data))
-}
-
-func main() {
-	fmt.Println("hello world!")
-	fmt.Fprintln(UpperWriter{os.Stdout}, "Hello, world!")
-
-	// 2
-	fmt.Fprintln(os.Stdout, UpperString("Hello, world!"))
-
 }
 
 //------------------ 2 自定义打印格式

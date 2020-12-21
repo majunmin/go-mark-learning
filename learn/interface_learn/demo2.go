@@ -1,4 +1,4 @@
-package main
+package interface_learn
 
 import "fmt"
 
@@ -37,11 +37,4 @@ func totalExpense(s []SalaryCalculater) {
 		expense += cal.CalculateSalary()
 	}
 	fmt.Printf("Total Expense Per Monnth $%d", expense)
-}
-
-func main() {
-	emp1 := Permanent{empId: 1, basicPay: 8000, pf: 540}
-	emp2 := Contract{empId: 2, basicPay: 8000}
-	employees := []SalaryCalculater{emp1, emp2}
-	totalExpense(employees)
 }
